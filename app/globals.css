@@ -3,25 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-hex: #F5F5F5;
+  --background-hex: #1A1A1A;
+  --my-blue-hex: #1A73E8;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-hex: 255, 255, 255;
+    --background-start-hex: 0, 0, 0;
+    --background-end-hex: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground-hex);
+  background: var(--background-hex);
+  /* background-image: url("../public/Red-rect.svg"); */
+  /* background-image: url("../public/Blue-rect.svg"); */
+}
+
+.primary-button {
+  color: var(--foreground-hex);
+  background: var(--my-blue-hex);
+  @apply rounded px-2  py-1;
+}
+.secondary-button {
+  color: var(--my-blue-hex);
 }
