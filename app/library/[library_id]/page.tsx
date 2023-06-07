@@ -2,21 +2,21 @@ import { supabase } from "@/utils/supabase";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const { data: script_id } = await supabase
+  const { data: library_id } = await supabase
     .from("apps_script_libraries")
-    .select("script_id");
-  return script_id ?? [];
+    .select("library_id");
+  return library_id ?? [];
 }
 
 export default async function Library({
-  params: { script_id },
+  params: { library_id },
 }: {
-  params: { script_id: string };
+  params: { library_id: string };
 }) {
   const { data: library } = await supabase
     .from("apps_script_libraries")
     .select()
-    .match({ script_id })
+    .match({ library_id })
     .single();
  
 
