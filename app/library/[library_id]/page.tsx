@@ -25,7 +25,7 @@ export default async function Library({
   }
 
   return (
-    <div>
+    <div className="bg-foreground min-h-screen">
      Hi
      <pre>
        {JSON.stringify(library,null,2)}

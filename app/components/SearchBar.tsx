@@ -3,7 +3,11 @@ import { useState, FormEvent } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function SearchBar() {
+type Props = {
+  otherColor: boolean
+}
+
+export default function SearchBar({otherColor}:Props) {
   const [search, setSearch] = useState("");
   const router = useRouter();
   
@@ -17,19 +21,19 @@ export default function SearchBar() {
       id="search"
       method="GET"
       action="/search"
-      className="flex w-1/2 gap-1"
+      className="flex w-full gap-1"
       onSubmit={handleSubmit}
     >
       <input
         type="text"
         onChange={(e) => setSearch(e.target.value)}
         id="search"
-        className=" bg-foreground p-2 w-full outline-none rounded"
+        className={` ${otherColor?"bg-background":"bg-foreground"} p-2 w-full outline-none rounded`}
         placeholder="Find a library"
         value={search}
       />
       <button
-        className=" bg-foreground p-2 text-primary outline-none rounded"
+        className={`${otherColor?"bg-background":"bg-foreground"}  p-2 text-primary outline-none rounded`}
         title="search"
       >
         <Image

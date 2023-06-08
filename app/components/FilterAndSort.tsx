@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function FilterAndSort() {
   return (
     <div className="flex justify-between items-center">
-      <div className="flex gap-4">
+      <div className="flex gap-2 md:gap-4">
         <button className="p-1 hover:border-b-[1px] hover:border-secondary">Popular</button>
         <button className="p-1 hover:border-b-[1px] hover:border-secondary">Recent</button>
         </div>

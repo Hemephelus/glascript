@@ -17,7 +17,10 @@ module.exports = {
   },
   boxShadow: {
     'card': '0px 4px 4px rgba(0, 0, 0, .25)',
-  }
+  },
+  gridTemplateColumns: {
+    'fluid': 'repeat(auto-fill, minmax(16px, 1fr))',
+  },
   
     },
   },

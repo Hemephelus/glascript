@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
- <nav className='flex flex-col gap-4 px-[10%] py-8'>
+ <nav className='flex flex-col gap-4 px-4 md:px-[10%] py-8'>
     <Link href="/">
         <Image
           src="/glascript.svg"
