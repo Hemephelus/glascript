@@ -10,10 +10,10 @@ type Props = {
 export default function SearchBar({otherColor}:Props) {
   const [search, setSearch] = useState("");
   const router = useRouter();
-  
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(`/search/?q=${search}`);
+    router.push(`/search/${search}/`);
   };
 
   return (

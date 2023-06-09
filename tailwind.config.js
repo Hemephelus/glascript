@@ -6,6 +6,21 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      'mobile-sm': '320px',
+      // => @media (min-width: 320px) { ... }
+      'mobile-md': '375px',
+      // => @media (min-width: 375px) { ... }
+      'mobile-lg': '425px',
+      // => @media (min-width: 425px) { ... }
+      'tablet': '640px',
+      // => @media (min-width: 640px) { ... }
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
+
     extend: {
   colors:{
     primary:"#1A73E8",
