@@ -22,7 +22,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col items-center">
-        <div className=" flex flex-col items-center text-center gap-1 tablet:gap-4 px-[10%] tablet:px-[20%] my-16">
+        <div className=" flex flex-col items-center text-center gap-1 tablet:gap-4 px-[5%] mobile-lg:px-[10%] tablet:px-[15%] my-16">
           <h1 className="text-xl sm:text-3xl tablet:text-5xl font-semibold">
             Discover Apps Script Library with Ease
           </h1>
@@ -33,7 +33,7 @@ export default async function Home() {
             your projects
           </p>
         </div>
-        <div className="px-[10%] tablet:px-[20%] w-full">
+        <div className="px-[5%] mobile-lg:px-[10%] w-full">
           <SearchBar otherColor={false} />
         </div>
       </div>

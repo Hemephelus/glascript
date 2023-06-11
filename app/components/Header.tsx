@@ -20,7 +20,7 @@ export default function Header() {
   }, [])
 
   return (
- <nav className={`px-4 py-4  flex justify-between md:pt-8 md:pb-4 md:px-[10%] sticky top-0 ${navBg?' bg-background':''}`} onScroll={changeNavBg}>
+ <nav className={`z-10 px-4 py-4 w-full  flex justify-between tablet:pt-8 tablet:pb-4 tablet:px-[5%] duration-300 fixed top-0 ${navBg?' bg-background':''}`} onScroll={changeNavBg}>
     <Link href="/">
         <Image
           src="/glascript.svg"
@@ -33,16 +33,16 @@ export default function Header() {
         </Image>
     </Link>
 
- <div className='flex gap-2 md:gap-4 items-center'>
+ <div className='flex gap-2 tablet:gap-4 items-center'>
    
-    <Link href="/docs" className='hidden md:flex'>Docs</Link>
-    <Link href="/about" className='hidden md:flex'>About</Link>
-    <Link href="/about" className='hidden md:flex'>Community</Link>
-    <Link href="/donation" className='hidden md:flex'>Donation</Link>
-    <Link href="/" className='secondary-button hover:border-b-2 hover:border-accent hidden md:flex'>Login</Link>
+    <Link href="/docs" className='hidden tablet:flex'>Docs</Link>
+    <Link href="/about" className='hidden tablet:flex'>About</Link>
+    <Link href="/about" className='hidden tablet:flex'>Community</Link>
+    <Link href="/donation" className='hidden tablet:flex'>Donation</Link>
+    <Link href="/" className='secondary-button hover:border-b-2 hover:border-accent hidden tablet:flex'>Login</Link>
     <Link href="/" className='primary-button hover:scale-95 duration-300'>Sign Up</Link>
 
-    <button className='bg-foreground p-1 rounded md:hidden' onClick={() => setIsOpen(!isOpen)}>
+    <button className='bg-foreground p-1 rounded tablet:hidden' onClick={() => setIsOpen(!isOpen)}>
         <Image
           src="/more-outlined.svg"
           alt="blue Line"

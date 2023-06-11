@@ -4,14 +4,9 @@ import { supabase } from "@/utils/supabase";
 
 export default async function Home() {
   
-  const {data:posts} = await (await supabase.from("apps_script_libraries").select("library_id").limit(10))
-  
   return (
- <div>
+ <div className=" min-h-screen">
   Hi
-  <pre>
-      {JSON.stringify(posts,null,2)}
-  </pre>
  </div>
   )
 }
