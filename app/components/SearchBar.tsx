@@ -2,31 +2,14 @@
 import { useState, FormEvent, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/utils/supabase";
-import Link from "next/link";
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({
-  weight: ["300", "400", "500"],
-  style: "normal",
-  subsets: ["latin"],
-});
+import getAutocompleteResult from "@/lib/getAutocompleteResult";
+import SearchResult from "./SearchResult";
 
 type Props = {
   otherColor: boolean;
 };
 
-async function getAutocompleteResult(search: string) {
-  const { data } = await supabase
-    .from("apps_script_libraries")
-    .select("library_id, description, library_name, author")
-    .or(`description.ilike.%${search}%`)
-    .limit(10);
-
-  return data;
-}
-
-function useDebounceValue(value: string, time = 200) {
+function useDebounceValue(value: string, time = 300) {
   const [debounceValue, setDebounceValue] = useState(value);
 
   useEffect(() => {
@@ -47,6 +30,7 @@ export default function SearchBar({ otherColor }: Props) {
   const [suggestions, setSuggestions] = useState<Suggestions[]>([]);
   const debounceSearch = useDebounceValue(search);
   const router = useRouter();
+  const { data, isLoading, error } = getAutocompleteResult(debounceSearch);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,21 +38,8 @@ export default function SearchBar({ otherColor }: Props) {
   };
 
   useEffect(() => {
-    let ignore = false;
-    (async () => {
-      if (debounceSearch.length > 0) {
-        const data = (await getAutocompleteResult(debounceSearch)) || [];
-        if (!ignore) {
-          setSuggestions(data);
-        }
-      } else {
-        setSuggestions([]);
-      }
-    })();
-    return () => {
-      ignore = true;
-    };
-  }, [debounceSearch]);
+    setSuggestions(data);
+  }, [data]);
 
   return (
     <form
@@ -79,12 +50,14 @@ export default function SearchBar({ otherColor }: Props) {
       onSubmit={handleSubmit}
     >
       <input
-        type="text"
-        onChange={(e) => setSearch(e.target.value)}
+        type="search"
+        onChange={(e) => {
+          setSearch(e.target.value);
+        }}
         id="search"
         className={` ${
           otherColor ? "bg-background" : "bg-foreground"
-        } p-2 w-full outline-none rounded-l`}
+        } p-2 w-full outline-none rounded-l `}
         placeholder="Search libraries"
         value={search}
       />
@@ -103,25 +76,13 @@ export default function SearchBar({ otherColor }: Props) {
           priority
         ></Image>
       </button>
-      <div className={`absolute top-12 max-h-[300px] rounded ${
-          otherColor ? "bg-background" : "bg-foreground"
-        } w-full overflow-auto flex flex-col p-2 gap-2`}>
-        {suggestions.map((suggestion) => (
-          <Link
-            href={`/library/${suggestion.library_id}`}
-            key={suggestion.library_id}
-            className={`px-4 py-2 border-b-secondary border-b`}
-          >
-            <h1 className="text-lg">{suggestion.library_name}</h1>
 
-            <p
-              className={` ${roboto.className} text-neutral_sub text-sm w-full  overflow-hidden whitespace-nowrap text-ellipsis`}
-            >
-              {suggestion.description}
-            </p>
-          </Link>
-        ))}
-      </div>
+      <SearchResult
+        suggestions={suggestions}
+        otherColor={otherColor}
+        isLoading={isLoading}
+        error={error}
+      />
     </form>
   );
 }

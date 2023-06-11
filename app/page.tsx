@@ -22,9 +22,9 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col items-center">
-        <div className=" flex flex-col items-center text-center gap-1 tablet:gap-4 px-[5%] mobile-lg:px-[10%] tablet:px-[15%] my-16">
+        <div className=" flex flex-col items-center text-center gap-1 tablet:gap-4 px-[5%] mobile-lg:px-[10%] tablet:px-[10%] pt-16 my-16">
           <h1 className="text-xl sm:text-3xl tablet:text-5xl font-semibold">
-            Discover Apps Script Library with Ease
+           Discover  <span className="text-primary">Apps Script</span><br />Libraries with <span className="text-secondary" >Ease</span>
           </h1>
           <p
             className={`${roboto.className} text-neutral_sub text-sm sm:text-base tablet:text-xl`}
@@ -33,7 +33,7 @@ export default async function Home() {
             your projects
           </p>
         </div>
-        <div className="px-[5%] mobile-lg:px-[10%] w-full">
+        <div className="px-[5%] table:px-[] w-full">
           <SearchBar otherColor={false} />
         </div>
       </div>
