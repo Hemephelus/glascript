@@ -26,9 +26,11 @@ module.exports = {
     primary:"#1A73E8",
     secondary:"#EA4335",
     background:"#1A1A1A",
+    background_sub:"#252525",
     neutral:"#F5F5F5",
     neutral_sub:"#CCCCCC",
     foreground:"#292929",
+    foreground_sub:"#1A1A1A80",
   },
   boxShadow: {
     'card': '0px 4px 4px rgba(0, 0, 0, .25)',

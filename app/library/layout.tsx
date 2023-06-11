@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import SearchBar from "../components/SearchBar";
 
 export const metadata = {
@@ -15,7 +16,6 @@ export default function SearchPageLayout({
       <div className="px-[5%] w-[50%] ">
         <SearchBar otherColor={true} />
       </div>
-
       {children}
     </section>
   );
