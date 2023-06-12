@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/utils/supabase";
 
-function getAutocompleteResult(search: string) {
+function useGetAutocompleteResult(search: string) {
   const [data, setData] = useState<Suggestions[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -40,9 +40,9 @@ function getAutocompleteResult(search: string) {
     return () => {
       ignore = true;
     };
-  }, [search]);
+  }, [search,error]);
 
   return { data, isLoading, error };
 }
 
-export default getAutocompleteResult;
+export default useGetAutocompleteResult;

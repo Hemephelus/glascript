@@ -28,7 +28,6 @@ export default async function Library({
     .select()
     .match({ library_id })
     .single();
-  console.log(library);
 
   if (!library) {
     notFound();

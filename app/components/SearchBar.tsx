@@ -2,7 +2,7 @@
 import { useState, FormEvent, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import getAutocompleteResult from "@/lib/getAutocompleteResult";
+import useGetAutocompleteResult from "@/lib/useGetAutocompleteResult";
 import SearchResult from "./SearchResult";
 
 type Props = {
@@ -30,7 +30,7 @@ export default function SearchBar({ otherColor }: Props) {
   const [suggestions, setSuggestions] = useState<Suggestions[]>([]);
   const debounceSearch = useDebounceValue(search);
   const router = useRouter();
-  const { data, isLoading, error } = getAutocompleteResult(debounceSearch);
+  const { data, isLoading, error } = useGetAutocompleteResult(debounceSearch);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
