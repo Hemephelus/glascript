@@ -3,6 +3,7 @@ import SideBar from "./components/LibrarySideBar";
 import { Suspense } from "react";
 import LibraryHeader from "./components/LibraryHeader";
 import Link from "next/link";
+import LoadingHeader from "./loadingSkeletons/HeaderSkeleton";
 
 type Props = {
   params: { library_id: string };
@@ -36,7 +37,7 @@ export default async function SearchPageLayout({
 
   return (
     <section className="bg-foreground min-h-screen  w-full px-[5%] ">
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<LoadingHeader/>}>
         {/* @ts-expect-error Async Server Component */}
         <LibraryHeader libraryHeaderDetails={headerDetails} />
       </Suspense>

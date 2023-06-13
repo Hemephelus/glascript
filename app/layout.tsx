@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Image from "next/image";
+import { Suspense } from "react";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -34,7 +35,9 @@ export default function RootLayout({
         <Header />
         {/* <div className="h-16"></div> */}
 
+
         {children}
+
         <Footer/>
       </body>
     </html>

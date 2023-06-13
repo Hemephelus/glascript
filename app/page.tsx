@@ -37,7 +37,7 @@ export default async function Home() {
           <SearchBar otherColor={false} />
         </div>
       </div>
-      <LibrariesSection librariesData={libraries} showFilterSort={true}/>
+      <LibrariesSection librariesData={libraries} showFilterSort={false}/>
 
     </div>
   );

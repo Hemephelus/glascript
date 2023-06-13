@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ClipboardCopy } from "./ClipboardCopy";
 
 type Props = {
    librarySideBarDetails: LibrarySideBar 
@@ -9,20 +9,11 @@ export default async function SideBar({ librarySideBarDetails }:Props) {
     <aside className=" bg-background_sub  px-4 py-8 rounded-lg sticky top-24 h-fit w-[400px] shadow-card flex flex-col gap-3">
       <div>
         <p>Script ID</p>
-        <div className="flex gap-1 bg-foreground_sub p-2 rounded-t border-b border-neutral_sub">
+        <div className="flex gap-1 items-center bg-foreground_sub p-2 rounded-t border-b border-neutral_sub">
           <p className="w-full overflow-hidden whitespace-nowrap text-ellipsis">
             {librarySideBarDetails?.library_id}
           </p>
-          <button>
-            <Image
-              src="/copy.svg"
-              alt="copy"
-              className=" "
-              width={24}
-              height={24}
-              priority
-            ></Image>
-          </button>
+          <ClipboardCopy copyText={librarySideBarDetails?.library_id}/>
         </div>
       </div>
       <div>

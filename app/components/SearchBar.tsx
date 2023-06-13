@@ -4,26 +4,13 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import useGetAutocompleteResult from "@/lib/useGetAutocompleteResult";
 import SearchResult from "./SearchResult";
+import { useDebounceValue } from "@/lib/useDebouncer";
 
 type Props = {
   otherColor: boolean;
 };
 
-function useDebounceValue(value: string, time = 300) {
-  const [debounceValue, setDebounceValue] = useState(value);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setDebounceValue(value);
-    }, time);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [value, time]);
-
-  return debounceValue;
-}
 
 export default function SearchBar({ otherColor }: Props) {
   const [search, setSearch] = useState("");
@@ -40,6 +27,10 @@ export default function SearchBar({ otherColor }: Props) {
   useEffect(() => {
     setSuggestions(data);
   }, [data]);
+
+  function closeSearchResult(){
+    setSuggestions([])
+  }
 
   return (
     <form
@@ -82,6 +73,7 @@ export default function SearchBar({ otherColor }: Props) {
         otherColor={otherColor}
         isLoading={isLoading}
         error={error}
+        closeSearchResult={closeSearchResult}
       />
     </form>
   );

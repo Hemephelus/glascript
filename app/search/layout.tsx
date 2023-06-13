@@ -13,10 +13,10 @@ export default function SearchPageLayout({
 }) {
   return (
     <section>
-      <div className="px-[10%] md:px-[20%] pt-20 w-full">
+      <div className="px-[10%] tablet:px-[20%] pt-32 w-full">
         <SearchBar otherColor={false} />
       </div>
-      {children}
+      <Suspense>{children}</Suspense>
     </section>
   );
 }

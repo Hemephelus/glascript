@@ -21,7 +21,7 @@ export default async function SearchPage({ params: { searchTerm } }: Props) {
 
   return (
     <>
-      <LibrariesSection librariesData={libraries} showFilterSort={true} />
+      <LibrariesSection librariesData={libraries} showFilterSort={false} />
     </>
   );
 }
