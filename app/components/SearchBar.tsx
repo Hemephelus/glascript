@@ -46,7 +46,7 @@ export default function SearchBar({ otherColor }: Props) {
       id="search"
       method="GET"
       action="/search"
-      className="flex w-full gap-1 relative"
+      className="flex w-full gap-1 relative z-10"
       onSubmit={handleSubmit}
     >
       <input

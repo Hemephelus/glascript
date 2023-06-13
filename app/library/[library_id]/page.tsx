@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Roboto } from "next/font/google";
 import { getRelativeTimeString } from "@/utils/relativetime";
-import { p } from "nextra/dist/types-fa5ec8b0";
 
 const roboto = Roboto({
   weight: ["300", "400", "500"],
