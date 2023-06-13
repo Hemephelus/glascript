@@ -1,8 +1,8 @@
-// export default function Page({ params, searchParams }: Props) {}
 import { supabase } from "@/utils/supabase";
 import SideBar from "./components/LibrarySideBar";
 import { Suspense } from "react";
 import LibraryHeader from "./components/LibraryHeader";
+import Link from "next/link";
 
 type Props = {
   params: { library_id: string };
@@ -16,7 +16,6 @@ export default async function SearchPageLayout({
   children,
   params: { library_id },
 }: Props) {
-
   // sidebar data
   const { data: sideBarData } = await supabase
     .from("apps_script_libraries")
@@ -36,13 +35,28 @@ export default async function SearchPageLayout({
   const headerDetails: LibraryHeader = (await headerData) || null;
 
   return (
-    <section className="bg-foreground min-h-screen grid grid-rows-[auto,_1fr] w-full px-[5%]">
+    <section className="bg-foreground min-h-screen  w-full px-[5%] ">
       <Suspense fallback={<h2>Loading...</h2>}>
         {/* @ts-expect-error Async Server Component */}
         <LibraryHeader libraryHeaderDetails={headerDetails} />
       </Suspense>
-      <main className="grid grid-cols-[1fr,_auto] gap-4 relative py-8">
+   
+      <main className="grid grid-cols-[1fr,_auto] gap-4 relative pb-8">
+        <div>
+        <nav className="flex py-1 border-b-2 border-b-secondary gap-4 mb-4">
+        <Link href={`/library/${library_id}/`} className="hidden tablet:flex hover:text-primary duration-300">
+          Readme
+        </Link>
+        <Link href={`/library/${library_id}/code`} className="hidden tablet:flex hover:text-primary duration-300">
+          Code
+        </Link>
+     
+        {/* <Link href={`/library/${library_id}/ask-glas`} className="hidden tablet:flex">
+          Ask Glas
+        </Link> */}
+      </nav>
         {children}
+        </div>
         <Suspense fallback={<h2>Loading...</h2>}>
           {/* @ts-expect-error Async Server Component */}
           <SideBar librarySideBarDetails={sideBarDetails} />

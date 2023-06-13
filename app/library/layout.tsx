@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import SearchBar from "../components/SearchBar";
 
 export const metadata = {
-  title: "Library - Glascript",
+  title: "Library | Glascript",
   description: "Find the perfect Apps Script library for your project",
 };
 

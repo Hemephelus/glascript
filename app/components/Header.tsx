@@ -9,7 +9,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const changeNavBg = () => {
-   window.scrollY >= 50 ? setNavBg(true) : setNavBg(false);
+   window.scrollY >= 20 ? setNavBg(true) : setNavBg(false);
   }
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function Header() {
   }, [])
 
   return (
- <nav className={`z-10 px-4 py-4 w-full  flex justify-between tablet:pt-8 tablet:pb-4 tablet:px-[5%] duration-300 fixed top-0 ${navBg?' bg-background':''}`} onScroll={changeNavBg}>
+ <nav className={`z-20 px-4 py-4 w-full  flex justify-between tablet:pt-8 tablet:pb-4 tablet:px-[5%] duration-300 fixed top-0 ${navBg?' bg-background':''}`} onScroll={changeNavBg}>
     <Link href="/">
         <Image
           src="/glascript.svg"

@@ -19,7 +19,7 @@ type Props = {
   }
 
   return (
-      <header className="flex items-end border-b-primary py-1 border-b-2">
+      <header className="flex items-end border-b-primary py-1 border-b-2 mb-4">
         <div className="flex-1">
           <div className="flex flex-col gap-1">
             <h1 className="text-lg mobile-lg:text-xl">

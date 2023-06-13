@@ -1,4 +1,4 @@
-export default async function LoadingLibrary() {
+export default function LoadingLibrary() {
     return <div>
       Loading2...
     </div>;
