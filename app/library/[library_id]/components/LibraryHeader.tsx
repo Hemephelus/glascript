@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Roboto } from "next/font/google";
 import { getRelativeTimeString } from "@/utils/relativetime";
-
+export const revalidate = 0
 const roboto = Roboto({
   weight: ["300", "400", "500"],
   style: "normal",
@@ -12,7 +12,8 @@ type Props = {
     libraryHeaderDetails: LibraryHeader 
  }
  export default async function LibraryHeader({ libraryHeaderDetails }:Props) {
-
+  console.log(libraryHeaderDetails);
+  
   function formatDate(date: string = "") {
     const milliseconds = Date.parse(date);
     return getRelativeTimeString(milliseconds, "en");
