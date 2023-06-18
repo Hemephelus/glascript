@@ -2,6 +2,8 @@ import { supabase } from "@/utils/supabase";
 import { Roboto } from "next/font/google";
 import SearchBar from "./components/SearchBar";
 import LibrariesSection from "./components/LibrariesSection";
+export const revalidate = 60
+
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500"],

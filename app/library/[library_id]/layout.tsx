@@ -6,6 +6,8 @@ import Link from "next/link";
 import LoadingHeader from "./loadingSkeletons/HeaderSkeleton";
 import { registerView } from "@/utils/helperFunctions";
 
+export const revalidate = 0
+
 type Props = {
   params: { library_id: string };
   children: React.ReactNode;
