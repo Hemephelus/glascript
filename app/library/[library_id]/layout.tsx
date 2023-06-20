@@ -2,9 +2,9 @@ import { supabase } from "@/utils/supabase";
 import SideBar from "./components/LibrarySideBar";
 import { Suspense } from "react";
 import LibraryHeader from "./components/LibraryHeader";
-import Link from "next/link";
 import LoadingHeader from "./loadingSkeletons/HeaderSkeleton";
 import { registerView } from "@/utils/helperFunctions";
+import SubNavBar from "./components/SubNavBar";
 
 export const revalidate = 0
 
@@ -49,24 +49,7 @@ export default async function SearchPageLayout({
 
       <main className="grid grid-cols-[1fr,_auto] gap-4 relative pb-8">
         <div>
-          <nav className="flex py-1 border-b-2 border-b-secondary gap-4 mb-4">
-            <Link
-              href={`/library/${library_id}/`}
-              className="hidden tablet:flex hover:text-primary duration-300"
-            >
-              Readme
-            </Link>
-            <Link
-              href={`/library/${library_id}/code`}
-              className="hidden tablet:flex hover:text-primary duration-300"
-            >
-              Code
-            </Link>
-
-            {/* <Link href={`/library/${library_id}/ask-glas`} className="hidden tablet:flex">
-          Ask Glas
-        </Link> */}
-          </nav>
+         <SubNavBar library_id={library_id}/>
           {children}
         </div>
         <Suspense fallback={<h2>Loading...</h2>}>

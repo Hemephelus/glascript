@@ -37,10 +37,18 @@ export default function Header() {
    
     <Link href="/docs" className='hidden tablet:flex'>Docs</Link>
     <Link href="/about" className='hidden tablet:flex'>About</Link>
-    <Link href="/about" className='hidden tablet:flex'>Community</Link>
-    <Link href="/donation" className='hidden tablet:flex'>Donation</Link>
-    <Link href="/" className='secondary-button hover:border-b-2 hover:border-accent hidden tablet:flex'>Login</Link>
-    <Link href="/" className='primary-button hover:scale-95 duration-300'>Sign Up</Link>
+    <Link href="https://discord.gg/n9hrcnCSNT" target='_blank' title='Community'  className='hidden tablet:flex'> <Image
+          src="/discord.svg"
+          alt="blue Line"
+          className="  "
+          width={24}
+          height={24}
+          priority
+          >
+        </Image></Link>
+    {/* <Link href="/donation" className='hidden tablet:flex'>Donation</Link> */}
+    {/* <Link href="/" className='secondary-button hover:border-b-2 hover:border-accent hidden tablet:flex'>Login</Link>
+    <Link href="/" className='primary-button hover:scale-95 duration-300'>Sign Up</Link> */}
 
     <button className='bg-foreground p-1 rounded tablet:hidden' onClick={() => setIsOpen(!isOpen)}>
         <Image
@@ -73,10 +81,10 @@ export default function Header() {
 <div className="flex flex-col gap-4 w-full">
 <Link href="/docs" className=''>Docs</Link>
     <Link href="/about" className=''>About</Link>
-    <Link href="/about" className=''>Community</Link>
-    <Link href="/donation" className=''>Donation</Link>
-    <Link href="/" className='secondary-button hover:border-b-2 hover:border-accent '>Login</Link>
-    <Link href="/" className='primary-button hover:scale-95 duration-300'>Sign Up</Link>
+    <Link href="https://discord.gg/n9hrcnCSNT" target='_blank' className=''>Community</Link>
+    {/* <Link href="/donation" className=''>Donation</Link> */}
+    {/* <Link href="/" className='secondary-button hover:border-b-2 hover:border-accent '>Login</Link>
+    <Link href="/" className='primary-button hover:scale-95 duration-300'>Sign Up</Link> */}
 </div>
 
  </div>
