@@ -20,7 +20,7 @@ export default function Header() {
   }, [])
 
   return (
- <nav className={`z-20 px-4 py-4 w-full  flex justify-between tablet:pt-8 tablet:pb-4 tablet:px-[5%] duration-300 fixed top-0 ${navBg?' bg-background':''}`} onScroll={changeNavBg}>
+ <nav className={`z-20 px-4 py-4 w-full  flex justify-between tablet:pt-4 tablet:pb-4 tablet:px-[5%] duration-300 fixed top-0 after:absolute after:bottom-0 after:left-0 after:bg-[#EA433520] after:w-screen after:h-[0.5px] ${navBg?' bg-background':''}`} onScroll={changeNavBg}>
     <Link href="/">
         <Image
           src="/glascript.svg"

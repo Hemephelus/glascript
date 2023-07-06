@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <div className="px-[20%] py-32 text-justify text-lg flex flex-col gap-4 min-h-screen">
-      <h1 className="text-2xl underline text-primary font-bold">About Us</h1>
+    <div className="px-[10%] text-sm text-left  tablet:px-[20%] py-32 tablet:text-justify mobile-lg:text-lg flex flex-col gap-6 min-h-screen text-neutral_sub">
+      <h1 className="text-xl mobile-lg:text-2xl text-neutral font-semibold">About Us</h1>
       <p>
         Glascript <span className="text-secondary">[</span> <span className="text-primary">Google Libraries For Apps Script</span> <span className="text-secondary">]</span> <span className="text-primary">- GLAS</span> is a website dedicated to helping
         Apps Script developers find, use, and share libraries.
@@ -15,9 +15,9 @@ export default function About() {
       </p>
 
       <div>
-      <h3 className="text-xl underline text-primary font-bold">Features</h3>
+      <h3 className="text-lg mobile-lg:text-xl text-neutral_sub font-medium mb-2">Features</h3>
 
-<ul className=" list-decimal">
+<ul className=" list-decimal space-y-3">
   <li>
     Searchable library: We have a searchable library of over 1,000
     Apps Script libraries. You can search by library name, description, or
