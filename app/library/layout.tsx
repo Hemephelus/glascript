@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import SearchBar from "../components/SearchBar";
 
 export const metadata = {
