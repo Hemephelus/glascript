@@ -1,5 +1,4 @@
-import { supabase } from "@/utils/supabase";
-import Test from "../test.md";
+import Test from "../content/Docs.md";
 
 // export const revalidate = 1
 
