@@ -36,7 +36,6 @@ export default function Header() {
  <div className='flex gap-2 tablet:gap-4 items-center'>
    
     <Link href="/docs" className='hidden tablet:flex'>Docs</Link>
-    <Link href="/about" className='hidden tablet:flex'>About</Link>
     <Link href="https://discord.gg/n9hrcnCSNT" target='_blank' title='Community'  className='hidden tablet:flex'> <Image
           src="/discord.svg"
           alt="blue Line"

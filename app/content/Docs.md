@@ -22,5 +22,3 @@ We believe that Apps Script libraries are a powerful way to improve the producti
 7. Select the version with the highest number (Recommended).
 8. Click on **Add**
 9.  You are ready to go.
-## Apps Script libraries best practices
-## Examples

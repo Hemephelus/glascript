@@ -57,11 +57,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}{" "}
       </li>
     ),
-    a: ({ children }) => (
-      <a style={{ marginLeft: "12px" }}>
-        {children}{" "}
-      </a>
-    ),
+    // a: ({ children }) => (
+    //   <a style={{ marginLeft: "12px" }}>
+    //     {children}{" "}
+    //   </a>
+    // ),
     // ul: ({ children }) => <ul style={{ marginLeft: '12px',fontSize: "16px", color:"#CCCCCC", gap:"12px", display:"flex", flexDirection:"column"  }}>{children} </ul>,
     ol: ({ children }) => (
       <ol

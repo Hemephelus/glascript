@@ -17,7 +17,7 @@ export default async function Home() {
     .select(
       "library_id, description, recommended_version, updated_at, library_name, author, views"
     )
-    .limit(10);
+    .limit(20).order('views',{ascending:false});
 
   const libraries: Array<Library> = (await data) || [];
 
