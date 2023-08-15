@@ -24,7 +24,7 @@ export default function SubNavBar({ library_id }:Props) {
     <nav className="flex py-1 border-b-2 border-b-secondary gap-4 mb-4">
     <Link
       href={`/library/${library_id}/`}
-      className={`hidden tablet:flex hover:text-primary ${currentPage==='readme'?'text-primary':''} duration-300 flex items-center gap-1 text-lg`}
+      className={` tablet:flex hover:text-primary ${currentPage==='readme'?'text-primary':''} duration-300 flex items-center gap-1 text-lg`}
     >
         <Image
           src="/readme.svg"
@@ -39,7 +39,7 @@ export default function SubNavBar({ library_id }:Props) {
     </Link>
     <Link
       href={`/library/${library_id}/code`}
-      className={`hidden tablet:flex hover:text-primary ${currentPage==='code'?'text-primary':''} duration-300 text-lg flex items-center gap-1`}
+      className={`tablet:flex hover:text-primary ${currentPage==='code'?'text-primary':''} duration-300 text-lg flex items-center gap-1`}
     >
         <Image
           src="/code.svg"

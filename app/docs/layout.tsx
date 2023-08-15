@@ -10,7 +10,7 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "Library | Glascript",
+  title: "Documentation | Glascript",
   description: "Find the perfect Apps Script library for your project",
 };
 
@@ -21,9 +21,9 @@ export default function SearchPageLayout({
 }) {
   return (
     <>
-      <section className={`${roboto.className} min-h-screen bg-foreground grid grid-cols-1 laptop:grid-cols-[1fr,_auto] mobile-lg:px-[5%] py-20 relative gap-2`}>
+      <section className={`${roboto.className} min-h-screen bg-foreground grid grid-cols-1 laptop:grid-cols-[1fr,_auto] px-2 mobile-lg:px-[5%] py-20 relative gap-2`}>
         <main className="flex flex-col items-end gap-2">
-          <div className="w-full min-h-screen bg-background_sub p-4  rounded-lg">
+          <div className="w-full min-h-screen bg-background_sub p-2 tablet:p-4  rounded-lg">
             {children}
           </div>
         </main>

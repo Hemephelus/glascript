@@ -18,15 +18,15 @@ type Props = {
   }
 
   return (
-      <header className="flex items-end border-b-primary py-1 border-b-2 mb-4">
-        <div className="flex-1">
+      <header className="flex flex-col border-b-primary py-1 border-b-2 mb-4 tablet:flex-row">
+        <div className="flex-1 space-y-2">
           <div className="flex flex-col gap-1">
             <h1 className="text-lg mobile-lg:text-xl">
               {libraryHeaderDetails?.library_name}
             </h1>
 
             <p
-              className={` ${roboto.className} text-neutral_sub text-sm w-full  overflow-hidden whitespace-nowrap text-ellipsis`}
+              className={` ${roboto.className} text-neutral_sub text-sm w-full`}
             >
               {libraryHeaderDetails?.description}
             </p>

@@ -20,7 +20,7 @@ export default function Header() {
   }, [])
 
   return (
- <nav className={`z-20 px-4 py-4 w-full  flex justify-between tablet:pt-4 tablet:pb-4 tablet:px-[5%] duration-300 fixed top-0 after:absolute after:bottom-0 after:left-0 after:bg-[#EA433520] after:w-screen after:h-[0.5px] ${navBg?' bg-background':''}`} onScroll={changeNavBg}>
+ <nav className={`z-20 px-4 py-4 w-full  flex justify-between tablet:pt-4 tablet:pb-4 tablet:px-[5%] duration-300 fixed top-0 after:absolute after:bottom-0 after:left-0 after:bg-[#EA433520] after:w-screen after:h-[0.5px] after:-z-10 ${navBg?' bg-background':''}`} onScroll={changeNavBg}>
     <Link href="/">
         <Image
           src="/glascript.svg"
@@ -77,9 +77,9 @@ export default function Header() {
         </Image>
     </button>
    
-<div className="flex flex-col gap-4 w-full">
+<div className="flex flex-col gap-4 w-full z-30">
 <Link href="/docs" className=''>Docs</Link>
-    <Link href="/about" className=''>About</Link>
+    {/* <Link href="/about" className=''>About</Link> */}
     <Link href="https://discord.gg/n9hrcnCSNT" target='_blank' className=''>Community</Link>
     {/* <Link href="/donation" className=''>Donation</Link> */}
     {/* <Link href="/" className='secondary-button hover:border-b-2 hover:border-accent '>Login</Link>

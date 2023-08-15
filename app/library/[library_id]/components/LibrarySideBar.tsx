@@ -4,9 +4,9 @@ type Props = {
    librarySideBarDetails: LibrarySideBar 
 }
 export default async function SideBar({ librarySideBarDetails }:Props) {
- 
+//  
   return (
-    <aside className=" bg-background_sub  px-4 py-8 rounded-lg sticky top-24 h-fit w-[400px] shadow-card flex flex-col gap-3">
+    <aside className=" bg-background_sub px-4 py-8 rounded-lg laptop:sticky laptop:top-24 h-fit w-full shadow-card flex flex-col gap-3"> 
       <div>
         <p>Script ID</p>
         <div className="flex gap-1 items-center bg-foreground_sub p-2 rounded-t border-b border-neutral_sub">

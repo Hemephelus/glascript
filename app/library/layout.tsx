@@ -11,8 +11,8 @@ export default function SearchPageLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="bg-foreground flex flex-col items-end pt-24">
-      <div className="px-[5%] w-[50%] ">
+    <section className="bg-foreground flex flex-col tablet:items-end pt-24">
+      <div className="px-[5%] tablet:w-1/2 ">
         <SearchBar otherColor={true} />
       </div>
       {children}

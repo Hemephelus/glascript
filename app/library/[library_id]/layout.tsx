@@ -47,7 +47,7 @@ export default async function SearchPageLayout({
         <LibraryHeader libraryHeaderDetails={headerDetails} />
       </Suspense>
 
-      <main className="grid grid-cols-[1fr,_auto] gap-4 relative pb-8">
+      <main className="flex flex-col-reverse laptop:grid laptop:grid-cols-[1fr,_minmax(200px,400px)] gap-4 relative pb-8">
         <div>
          <SubNavBar library_id={library_id}/>
           {children}
