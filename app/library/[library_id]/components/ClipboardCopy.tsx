@@ -9,7 +9,7 @@ export function ClipboardCopy({ copyText }: Props) {
   const [isCopied, setIsCopied] = useState(false);
 
   // This is the function we wrote earlier
-  async function copyTextToClipboard(text: string ="") {
+  async function copyTextToClipboard(text: string = "") {
     if ("clipboard" in navigator) {
       return await navigator.clipboard.writeText(text);
     } else {
@@ -36,10 +36,7 @@ export function ClipboardCopy({ copyText }: Props) {
   return (
     <>
       {copyText ? (
-        <button
-          className={``}
-          onClick={handleCopyClick}
-        >
+        <button className={``} onClick={handleCopyClick}>
           {isCopied ? (
             <span className="text-primary">copied</span>
           ) : (

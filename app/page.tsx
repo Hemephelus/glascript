@@ -2,8 +2,7 @@ import { supabase } from "@/utils/supabase";
 import { Roboto } from "next/font/google";
 import SearchBar from "./components/SearchBar";
 import LibrariesSection from "./components/LibrariesSection";
-export const revalidate = 60
-
+export const revalidate = 60;
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500"],
@@ -12,12 +11,13 @@ const roboto = Roboto({
 });
 
 export default async function Home() {
-  const {data} = await supabase
+  const { data } = await supabase
     .from("apps_script_libraries")
     .select(
       "library_id, description, recommended_version, updated_at, library_name, author, views"
     )
-    .limit(20).order('views',{ascending:false});
+    .limit(20)
+    .order("views", { ascending: true });
 
   const libraries: Array<Library> = (await data) || [];
 
@@ -26,7 +26,9 @@ export default async function Home() {
       <div className="flex flex-col items-center">
         <div className=" flex flex-col items-center text-center gap-1 tablet:gap-4 px-[5%] mobile-lg:px-[10%] tablet:px-[10%] pt-16 my-16">
           <h1 className="text-xl sm:text-3xl tablet:text-5xl font-semibold">
-           Discover  <span className="text-primary">Apps Script</span><br />Libraries with <span className="text-secondary" >Ease</span>
+            Discover <span className="text-primary">Apps Script</span>
+            <br />
+            Libraries with <span className="text-secondary">Ease</span>
           </h1>
           <p
             className={`${roboto.className} text-neutral_sub text-sm sm:text-base tablet:text-xl`}
@@ -39,8 +41,7 @@ export default async function Home() {
           <SearchBar otherColor={false} />
         </div>
       </div>
-      <LibrariesSection librariesData={libraries} showFilterSort={false}/>
-
+      <LibrariesSection librariesData={libraries} showFilterSort={false} />
     </div>
   );
 }

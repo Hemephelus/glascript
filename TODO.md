@@ -1,0 +1,19 @@
+- [ ] Create a proper documentation
+  - [ ] Install
+  - [ ] JSDoc
+  - [ ] Example
+- [ ] Auth Flow (Google)
+  - [ ] Access to apps script api
+  - [ ] login
+  - [ ] logout
+- [ ] Unclaimed Libraries page
+- [ ] User Page
+  - [ ] Bio
+  - [ ] libraries
+- [ ] Create Library Project Page
+- [ ] Generate Read me with AI
+- [ ] Get code from appscript for the Code page
+- [ ]
+- [ ]
+- [ ]
+- [ ]
